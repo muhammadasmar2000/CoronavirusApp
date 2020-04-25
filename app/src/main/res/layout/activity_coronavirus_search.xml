@@ -49,11 +49,11 @@
     <TextView
         android:id="@+id/resultsTextView"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="center_horizontal"
         android:textColor="#000000"
-        android:textSize="20sp"
+        android:textSize="18sp"
     />
 
     <Button
@@ -65,9 +65,9 @@
         android:layout_marginTop="20dp"
         android:text="@string/view_chart_button_text"
         android:textColor="#FFFF"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:textAllCaps="false"
         />
-
 
 </LinearLayout>

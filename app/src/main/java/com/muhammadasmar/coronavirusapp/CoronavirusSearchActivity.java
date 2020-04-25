@@ -79,7 +79,7 @@ public class CoronavirusSearchActivity extends AppCompatActivity {
                                         "Deaths Today: " + String.valueOf(todayDeaths) + "\n" +
                                         "Recovered: " + String.valueOf(recovered) + "\n" +
                                         "Critical Cases: " + String.valueOf(critical) + "\n" +
-                                        "People Tested: " + String.valueOf(tests) + "\n"
+                                        "People Tested: " + String.valueOf(tests)
                          );
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -91,6 +91,7 @@ public class CoronavirusSearchActivity extends AppCompatActivity {
                     results.setText("Could not find country for coronavirus data");
                 }
             });
+            queue.add(jsonObjectRequest);
         }
     }
 
