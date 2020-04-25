@@ -51,7 +51,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/passwordEditText"
         android:background="@drawable/button_style"
-        android:text="Login"
+        android:text="@string/login_button_text"
         android:textColor="#FFFF"
         android:textStyle="bold"
         android:textAllCaps="false"
