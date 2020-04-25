@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CoronavirusApp</string>
+    <string name="email_text">Email</string>
+    <string name="password_text">Password</string>
+    <string name="username_text">Name</string>
+    <string name="country_input_hint">Enter Country</string>
+</resources>
