@@ -24,6 +24,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class CoronavirusSearchActivity extends AppCompatActivity {
+    public static final String EXTRA_COUNTRY = "com.muhammadasmar.coronavirusapp.COUNTRY";
     private FirebaseAuth firebaseAuth;
     private EditText country;
     private Button search, chart;
@@ -46,6 +47,20 @@ public class CoronavirusSearchActivity extends AppCompatActivity {
                 getCoronavirusData();
             }
         });
+
+        chart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!country.getText().toString().equals("")){
+                    Intent intent = new Intent(CoronavirusSearchActivity.this, ChartActivity.class);
+                    intent.putExtra(EXTRA_COUNTRY, country.getText().toString());
+                    startActivity(intent);
+                }
+                else {
+                    results.setText("Please enter a country to view chart");
+                }
+            }
+        });
     }
 
     private void getCoronavirusData(){
@@ -53,6 +68,7 @@ public class CoronavirusSearchActivity extends AppCompatActivity {
         if (countryName.equals("")){
             //user has not entered a country name
             results.setText("Please enter a country to view data");
+            return;
         }
         else {
             String url = "https://corona.lmao.ninja/v2/countries/" + String.valueOf(countryName);
