@@ -18,5 +18,7 @@ For commit 3, the coronavirus search has been implemented that includes asking t
 
 For Commit 5, the activity used to display the results of the coronavirus search has been implemented. This involves parsing the JSON object into multiple integer data types. The data is then casted to a string and displayed into the results text view on the display screen.
 
+For Commit 6, the chart is added to the project that involves adding all the chart.js files listed on the chart.js website, such as the requred css files and bundles. The cases html file is later added to the android studio project that will display all the results for coronavirus data for a country. 
+
 
 
