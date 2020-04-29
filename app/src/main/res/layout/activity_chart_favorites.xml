@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
-    tools:context=".ChartActivity">
+    tools:context=".ChartFavoritesActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
         />
 
     <WebView
-        android:id="@+id/webview1"
+        android:id="@+id/webview2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"

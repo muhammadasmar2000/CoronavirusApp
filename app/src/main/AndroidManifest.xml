@@ -12,8 +12,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FavoritesResultsActivity"></activity>
-        <activity android:name=".FavoritesActivity" />
+        <activity
+            android:name=".RecentNewsActivity"
+            android:parentActivityName=".CoronavirusSearchActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CoronavirusSearchActivity" />
+        </activity>
+        <activity
+            android:name=".ChartFavoritesActivity"
+            android:parentActivityName=".FavoritesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".FavoritesResultsActivity" />
+        </activity>
+        <activity
+            android:name=".FavoritesResultsActivity"
+            android:parentActivityName=".FavoritesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".FavoritesActivity" />
+        </activity>
+        <activity
+            android:name=".FavoritesActivity"
+            android:parentActivityName=".CoronavirusSearchActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CoronavirusSearchActivity" />
+        </activity>
         <activity
             android:name=".ChartActivity"
             android:parentActivityName=".CoronavirusSearchActivity">

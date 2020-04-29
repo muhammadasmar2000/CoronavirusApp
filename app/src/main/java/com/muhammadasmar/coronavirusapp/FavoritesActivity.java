@@ -9,8 +9,8 @@ import android.widget.TextView;
 
 public class FavoritesActivity extends AppCompatActivity {
     private TextView united_states, china, italy, canada, iran, spain;
-    String country;
-    public static final String EXTRA_FAVORITES_COUNTRY = "com.muhammadasmar.coronavirusapp.COUNTRY";
+    private String country;
+    public static final String EXTRA_FAVORITES_COUNTRY = "com.muhammadasmar.coronavirusapp.FAVORITES_COUNTRY";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

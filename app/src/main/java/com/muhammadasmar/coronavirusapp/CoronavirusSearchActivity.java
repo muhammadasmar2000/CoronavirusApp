@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -76,9 +77,11 @@ public class CoronavirusSearchActivity extends AppCompatActivity {
             jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject response) {
+                    String jsonCountry;
                     int cases, todayCases, deaths, todayDeaths, recovered, critical, tests;
                     try {
                         //parse object and print to screen
+                        jsonCountry = response.getString("country");
                         cases = response.getInt("cases");
                         todayCases = response.getInt("todayCases");
                         deaths = response.getInt("deaths");
@@ -88,7 +91,7 @@ public class CoronavirusSearchActivity extends AppCompatActivity {
                         tests = response.getInt("tests");
 
                         //display results
-                        results.setText("Country: " + countryName + "\n" +
+                        results.setText("Country: " + jsonCountry + "\n" +
                                         "Total Cases: " + String.valueOf(cases) + "\n" +
                                         "Cases Today: " + String.valueOf(todayCases) + "\n" +
                                         "Total Deaths: " + String.valueOf(deaths) + "\n" +
@@ -115,10 +118,15 @@ public class CoronavirusSearchActivity extends AppCompatActivity {
         firebaseAuth.signOut();
         finish();
         startActivity(new Intent(CoronavirusSearchActivity.this, MainActivity.class));
+        Toast.makeText(CoronavirusSearchActivity.this, "Logout Successful", Toast.LENGTH_SHORT).show();
     }
 
     private void goToFavorites() {
         startActivity(new Intent(CoronavirusSearchActivity.this, FavoritesActivity.class));
+    }
+
+    private void goToRecentNews(){
+        startActivity(new Intent(CoronavirusSearchActivity.this, RecentNewsActivity.class));
     }
 
     @Override
@@ -130,11 +138,17 @@ public class CoronavirusSearchActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
-            case R.id.logoutMenu:{
-                logoutAccount();
-            }
             case R.id.viewFavoritesMenu:{
                 goToFavorites();
+                break;
+            }
+            case R.id.viewRecentNewsMenu:{
+                goToRecentNews();
+                break;
+            }
+            case R.id.logoutMenu:{
+                logoutAccount();
+                break;
             }
         }
         return super.onOptionsItemSelected(item);
