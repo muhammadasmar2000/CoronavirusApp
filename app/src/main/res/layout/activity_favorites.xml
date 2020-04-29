@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/backgroundColor"
+    tools:context=".FavoritesActivity">
+
+    <TextView
+        android:id="@+id/favoritesHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tap on Country to View \n Virus Data"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp">
+
+        <ImageView style="@style/star_icon"
+            android:contentDescription="@string/star_description"/>
+
+        <TextView
+            android:id="@+id/tvUnitedStates"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="United States"
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold"
+            android:textSize="23sp"
+            android:textColor="@color/blueColor"
+            />
+
+    </LinearLayout>
+
+    <View style="@style/Divider.Horizontal" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
+
+        <ImageView style="@style/star_icon"
+            android:contentDescription="@string/star_description"/>
+
+        <TextView
+            android:id="@+id/tvChina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="China"
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold"
+            android:textSize="23sp"
+            android:textColor="@color/blueColor"
+            />
+    </LinearLayout>
+
+    <View style="@style/Divider.Horizontal" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
+
+        <ImageView style="@style/star_icon"
+            android:contentDescription="@string/star_description"/>
+
+        <TextView
+            android:id="@+id/tvItaly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Italy"
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold"
+            android:textSize="23sp"
+            android:textColor="@color/blueColor"
+            />
+    </LinearLayout>
+
+    <View style="@style/Divider.Horizontal" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
+
+        <ImageView style="@style/star_icon"
+            android:contentDescription="@string/star_description"/>
+
+        <TextView
+            android:id="@+id/tvCanada"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Canada"
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold"
+            android:textSize="23sp"
+            android:textColor="@color/blueColor"
+            />
+    </LinearLayout>
+
+    <View style="@style/Divider.Horizontal" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
+
+        <ImageView style="@style/star_icon"
+            android:contentDescription="@string/star_description"/>
+
+        <TextView
+            android:id="@+id/tvIran"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Iran"
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold"
+            android:textSize="23sp"
+            android:textColor="@color/blueColor"
+            />
+    </LinearLayout>
+
+    <View style="@style/Divider.Horizontal" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
+
+        <ImageView style="@style/star_icon"
+            android:contentDescription="@string/star_description"/>
+
+        <TextView
+            android:id="@+id/tvSpain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Spain"
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold"
+            android:textSize="23sp"
+            android:textColor="@color/blueColor"
+            />
+    </LinearLayout>
+
+    <View style="@style/Divider.Horizontal" />
+
+</LinearLayout>

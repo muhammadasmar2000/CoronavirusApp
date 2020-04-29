@@ -9,4 +9,5 @@
     <string name="login_button_text">Login</string>
     <string name="register_account_button_text">Register Account</string>
     <string name="enter_country_prompt">Enter a Country Below</string>
+    <string name="star_description">Star Icon</string>
 </resources>

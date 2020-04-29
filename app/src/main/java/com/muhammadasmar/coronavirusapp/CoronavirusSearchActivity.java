@@ -117,6 +117,10 @@ public class CoronavirusSearchActivity extends AppCompatActivity {
         startActivity(new Intent(CoronavirusSearchActivity.this, MainActivity.class));
     }
 
+    private void goToFavorites() {
+        startActivity(new Intent(CoronavirusSearchActivity.this, FavoritesActivity.class));
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
@@ -128,6 +132,9 @@ public class CoronavirusSearchActivity extends AppCompatActivity {
         switch(item.getItemId()){
             case R.id.logoutMenu:{
                 logoutAccount();
+            }
+            case R.id.viewFavoritesMenu:{
+                goToFavorites();
             }
         }
         return super.onOptionsItemSelected(item);

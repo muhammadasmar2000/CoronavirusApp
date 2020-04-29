@@ -8,4 +8,30 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Divider">
+        <!--change the color of the divider here -->
+        <item name="android:background">#000000</item>
+    </style>
+
+    <style name="Divider.Horizontal" parent="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <!-- change the thickness -->
+        <item name="android:layout_height">2dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+
+    </style>
+
+    <style name="Divider.Vertical" parent="Divider">
+        <item name="android:layout_width">2dp</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="star_icon">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:src">@drawable/ic_star_black_24dp</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <!--<item name="android:contentDescription">Star Icon</item> -->
+    </style>
+
 </resources>
