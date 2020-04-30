@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class FavoritesActivity extends AppCompatActivity {
+    //declare variables
     private TextView united_states, china, italy, canada, iran, spain;
     private String country;
     public static final String EXTRA_FAVORITES_COUNTRY = "com.muhammadasmar.coronavirusapp.FAVORITES_COUNTRY";
@@ -15,8 +16,9 @@ public class FavoritesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorites);
-        initializeTextViews();
+        initializeTextViews(); //initializes variables
 
+        //if user clicks United States, go to coronavirus search activity and auto search results
         united_states.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -27,6 +29,7 @@ public class FavoritesActivity extends AppCompatActivity {
             }
         });
 
+        //if user clicks China, go to coronavirus search activity and auto search results
         china.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,6 +40,7 @@ public class FavoritesActivity extends AppCompatActivity {
             }
         });
 
+        //if user clicks Italy, go to coronavirus search activity and auto search results
         italy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,6 +51,7 @@ public class FavoritesActivity extends AppCompatActivity {
             }
         });
 
+        //if user clicks Canada, go to coronavirus search activity and auto search results
         canada.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,6 +62,7 @@ public class FavoritesActivity extends AppCompatActivity {
             }
         });
 
+        //if user clicks Iran, go to coronavirus search activity and auto search results
         iran.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +73,7 @@ public class FavoritesActivity extends AppCompatActivity {
             }
         });
 
+        //if user clicks Spain, go to coronavirus search activity and auto search results
         spain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,6 +85,7 @@ public class FavoritesActivity extends AppCompatActivity {
         });
     }
 
+    //initializes textview variables
     private void initializeTextViews() {
         united_states = (TextView)findViewById(R.id.tvUnitedStates);
         china = (TextView)findViewById(R.id.tvChina);

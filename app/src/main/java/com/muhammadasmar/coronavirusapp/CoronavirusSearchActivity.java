@@ -25,6 +25,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class CoronavirusSearchActivity extends AppCompatActivity {
+    //declare variables
     public static final String EXTRA_COUNTRY = "com.muhammadasmar.coronavirusapp.COUNTRY";
     private FirebaseAuth firebaseAuth;
     private EditText country;
@@ -35,6 +36,7 @@ public class CoronavirusSearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coronavirus_search);
+        //initialize variables
         firebaseAuth = FirebaseAuth.getInstance();
         country = (EditText)findViewById(R.id.countryInput);
         search = (Button)findViewById(R.id.searchButton);
@@ -42,6 +44,7 @@ public class CoronavirusSearchActivity extends AppCompatActivity {
         chart = (Button)findViewById(R.id.chartButton);
         queue = Volley.newRequestQueue(this);
 
+        //get coronavirus data if search button clicked
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,6 +52,7 @@ public class CoronavirusSearchActivity extends AppCompatActivity {
             }
         });
 
+        //view chart if chart button is clicked
         chart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,8 +68,10 @@ public class CoronavirusSearchActivity extends AppCompatActivity {
         });
     }
 
+    //make JSON object request with country name
     private void getCoronavirusData(){
         final String countryName = country.getText().toString();
+        //make error if country edit text field is blank
         if (countryName.equals("")){
             //user has not entered a country name
             results.setText("Please enter a country to view data");
@@ -90,7 +96,7 @@ public class CoronavirusSearchActivity extends AppCompatActivity {
                         critical = response.getInt("critical");
                         tests = response.getInt("tests");
 
-                        //display results
+                        //display results by converting integers to strings
                         results.setText("Country: " + jsonCountry + "\n" +
                                         "Total Cases: " + String.valueOf(cases) + "\n" +
                                         "Cases Today: " + String.valueOf(todayCases) + "\n" +
@@ -105,15 +111,18 @@ public class CoronavirusSearchActivity extends AppCompatActivity {
                     }
                 }
             }, new Response.ErrorListener() {
+                //print error message if country not found
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     results.setText("Could not find country for coronavirus data");
                 }
             });
+            //Add to the request queue
             queue.add(jsonObjectRequest);
         }
     }
 
+    //if logout option selected, signout of account, finish activity, and go back to login screen
     private void logoutAccount(){
         firebaseAuth.signOut();
         finish();
@@ -121,20 +130,24 @@ public class CoronavirusSearchActivity extends AppCompatActivity {
         Toast.makeText(CoronavirusSearchActivity.this, "Logout Successful", Toast.LENGTH_SHORT).show();
     }
 
+    //if favorites option selected, go to FavoritesActivity
     private void goToFavorites() {
         startActivity(new Intent(CoronavirusSearchActivity.this, FavoritesActivity.class));
     }
 
+    //if recent news option selected, go to RecentNewsActivity
     private void goToRecentNews(){
         startActivity(new Intent(CoronavirusSearchActivity.this, RecentNewsActivity.class));
     }
 
+    //create options menu with the menu.xml file
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
 
+    //get the id of the menu option selected and start the respective activity
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){

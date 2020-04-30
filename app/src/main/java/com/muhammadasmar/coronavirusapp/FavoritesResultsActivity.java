@@ -19,6 +19,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class FavoritesResultsActivity extends AppCompatActivity {
+    //declare variables
     public static final String EXTRA_COUNTRY_CHART = "com.muhammadasmar.coronavirusapp.COUNTRY";
     private String country;
     private TextView results;
@@ -28,13 +29,15 @@ public class FavoritesResultsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorites_results);
+        //initialize variables
         queue = Volley.newRequestQueue(this);
-        Intent intent = getIntent();
+        Intent intent = getIntent(); //get the intent that started this activity
         country = intent.getStringExtra(FavoritesActivity.EXTRA_FAVORITES_COUNTRY);
         results = (TextView)findViewById(R.id.coronavirusFavoritesResult);
         chartBtn = (Button)findViewById(R.id.favoritesChartButton);
         displayData();
 
+        //if chart button clicked, go to new activity and display chart for user-specified country
         chartBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +48,7 @@ public class FavoritesResultsActivity extends AppCompatActivity {
         });
     }
 
+    //display data to screen with json object request
     private void displayData() {
         String url = "https://corona.lmao.ninja/v2/countries/" + country;
         JsonObjectRequest jsonObjectRequest;
@@ -81,9 +85,11 @@ public class FavoritesResultsActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                //error message if json object reqeust fails
                 results.setText("Could not find country for coronavirus data");
             }
         });
+        //add to the request queue
         queue.add(jsonObjectRequest);
     }
 }
