@@ -1,4 +1,14 @@
 # CoronavirusApp
+To use this app, run the code and being the app at the login screen. Enter in your login credentials to begin using the app. If you do not have an account, click the register button on the bottom of the screen to go to a registration screen. To create an account, enter a name, username and password. Then, click create account and you will automatically be able to use the application. 
+
+To view the coronavirus results for a country, enter the name of a country in the text field that reads "Enter country." If you wish to view results of that country, click on "View Chart."
+
+To view popular countries, click on the menu options in the top right corner and click the options that reads "View Favorites." In this screen, you can click on popular countries and view the highest searched countries relative to the coronavirus. Click on any of the countries to view virus information on that country. 
+
+To view recent news on the novel coronavirus, in the same menu in the top right corner, click on "View Recent News." This will take you to a new screen where there are three articles. Each article with have its title, author and article description on the screen. 
+
+Remember when done using the app, go to the menu and click on "Logout" to log out of your account. If you wish to automatically be signed back into your account when you log back into the app, do not log out of your account when exiting the application.
+
 Commit 1: Login and Account Registration created.
 
 Commit 3: Coronavirus xml file and java file have been created
