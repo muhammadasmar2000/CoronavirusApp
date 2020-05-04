@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         //if user is already signed in, take them to the search activity
         FirebaseUser user = firebaseAuth.getCurrentUser();
+        //checks if the current user is not null, otherwise, proceed to normal login
         if(user != null){
             finish();
             startActivity(new Intent(MainActivity.this, CoronavirusSearchActivity.class));
@@ -91,7 +92,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Login Unsuccessful", Toast.LENGTH_SHORT).show();
                     counter--;  //decrement counter
                     attempts.setText("Login Attempts Remaining: " + String.valueOf(counter));
-                    if(counter == 0){ //disable login button is counter reaches zero
+                    if(counter == 0) { //check if login counter is zero
+                        //disable login button is counter reaches zero
                         loginButton.setEnabled(false);
                     }
                 }

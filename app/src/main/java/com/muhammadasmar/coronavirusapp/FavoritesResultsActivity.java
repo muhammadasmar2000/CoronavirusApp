@@ -68,7 +68,7 @@ public class FavoritesResultsActivity extends AppCompatActivity {
                     critical = response.getInt("critical");
                     tests = response.getInt("tests");
 
-                    //display results
+                    //display results using variables creating by parsing JSON object
                     results.setText("Country: " + countryName + "\n" +
                             "Total Cases: " + String.valueOf(cases) + "\n" +
                             "Cases Today: " + String.valueOf(todayCases) + "\n" +
