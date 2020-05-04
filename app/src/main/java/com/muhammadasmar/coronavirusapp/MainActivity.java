@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView attempts;
     private TextView registerTextView;
     private FirebaseAuth firebaseAuth;
-    private ProgressDialog progressDialog;
+    private ProgressDialog progressDialog; //stops the user from interacting with the app when validating login credentials
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 else{
                     //login failure
                     progressDialog.dismiss();
+                    //toast message to display failure
                     Toast.makeText(MainActivity.this, "Login Unsuccessful", Toast.LENGTH_SHORT).show();
                     counter--;  //decrement counter
                     attempts.setText("Login Attempts Remaining: " + String.valueOf(counter));

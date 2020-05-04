@@ -31,6 +31,7 @@ public class RecentNewsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recent_news);
+        //initialize variables
         news1 = (TextView)findViewById(R.id.recentNews1);
         news2 = (TextView)findViewById(R.id.recentNews2);
         news3 = (TextView)findViewById(R.id.recentNews3);
@@ -38,13 +39,15 @@ public class RecentNewsActivity extends AppCompatActivity {
         makeNewsRequest();
     }
 
+    //message that makes News API JSON Request
     private void makeNewsRequest() {
         JsonObjectRequest jsonObjectRequest;
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                //json variables
+
                 try {
+                    //grab first three articles in JSON articles array
                     JSONArray articles = response.getJSONArray("articles");
                     JSONObject news1object = articles.getJSONObject(0);
                     String author1 = news1object.getString("author");
@@ -79,9 +82,11 @@ public class RecentNewsActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                //toast error message if News API request fails
                 Toast.makeText(RecentNewsActivity.this, "Could not find recent headlines for coronavirus news", Toast.LENGTH_SHORT).show();
             }
         });
+        //add news request to the request queue
         queue.add(jsonObjectRequest);
     }
 }
